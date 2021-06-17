@@ -1,0 +1,6 @@
+name: CursedPirates
+author: jonaqhan
+version: 0.1
+main: me.jonaqhan.cursedpirates.Main
+api-version: 1.16
+description: You live with cursed pirates
