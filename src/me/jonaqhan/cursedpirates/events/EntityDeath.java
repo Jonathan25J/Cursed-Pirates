@@ -49,8 +49,8 @@ public class EntityDeath implements Listener {
 		if (e.getEntity().getName().equals(Chat.color("&7First Mate"))) {
 
 			e.getDrops().clear();
-			e.getDrops().addAll(Arrays.asList(new ItemStack(Material.GOLD_INGOT, 3), new ItemStack(Material.COAL, 2),
-					new ItemStack(Material.LAPIS_LAZULI, 5), new ItemStack(Material.REDSTONE, 3)));
+			e.getDrops().addAll(Arrays.asList(new ItemStack(Material.GOLD_INGOT, 2), new ItemStack(Material.COAL, 3),
+					new ItemStack(Material.LAPIS_LAZULI, 3), new ItemStack(Material.REDSTONE, 4)));
 
 			if (new Random().nextInt(9) == 0) {
 				e.getDrops().add(new ItemStack(Material.DIAMOND, new Random().nextInt(1) + 1));

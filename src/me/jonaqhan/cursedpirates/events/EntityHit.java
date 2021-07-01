@@ -25,10 +25,24 @@ import net.minecraft.server.v1_16_R3.PacketPlayOutEntityStatus;
 
 public class EntityHit implements Listener {
 
+	public List<String> names = Arrays.asList("&c&lCaptain", "&6Quartermaster", "&7First Mate", "&9Cabin Boy");
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onHit(EntityDamageByEntityEvent e) {
+		if (e.getDamager().getType() == EntityType.LIGHTNING) {
 
+			if (e.getEntityType() == EntityType.WITCH) {
+				for (String name : names) {
+					if (e.getEntity().getName().equals(Chat.color(name))) {
+						e.setCancelled(true);
+						e.getEntity().remove();
+
+						return;
+					}
+				}
+			}
+		}
 		if (!e.getDamager().getType().equals(EntityType.VILLAGER))
 			return;
 
@@ -69,11 +83,11 @@ public class EntityHit implements Listener {
 
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 100), true);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 100, 100), true);
-			
+
 			if (new Random().nextInt(10) >= 5) {
 				p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 60, 1), true);
 			}
-		
+
 			e.setCancelled(true);
 
 		}
@@ -85,8 +99,6 @@ public class EntityHit implements Listener {
 
 		if (!e.getEntity().getType().equals(EntityType.ZOMBIE) && !e.getEntity().getType().equals(EntityType.HUSK))
 			return;
-
-		List<String> names = Arrays.asList("&c&lCaptain", "&6Quartermaster", "&7First Mate", "&9Cabin Boy");
 
 		if (e.getTarget() != null) {
 

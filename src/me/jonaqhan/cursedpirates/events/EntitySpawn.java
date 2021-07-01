@@ -88,7 +88,7 @@ public class EntitySpawn implements Listener {
 		if (e.getLocation().getBlock().isLiquid())
 			return null;
 
-		if (!(new Random().nextInt(100 - 0) - 0 < 18))
+		if (!(new Random().nextInt(100 - 0) - 0 < 8))
 			return null;
 
 		if (e.getLocation().getBlock().isLiquid())
@@ -105,7 +105,7 @@ public class EntitySpawn implements Listener {
 		if (e.getLocation().getBlock().isLiquid())
 			return null;
 
-		if (!(new Random().nextInt(100 - 0) - 0 < 25))
+		if (!(new Random().nextInt(100 - 0) - 0 < 15))
 			return null;
 
 		if (e.getLocation().getBlock().isLiquid())
@@ -122,7 +122,7 @@ public class EntitySpawn implements Listener {
 		if (e.getLocation().getBlock().isLiquid())
 			return null;
 
-		if (!(new Random().nextInt(100 - 0) - 0 < 22))
+		if (!(new Random().nextInt(100 - 0) - 0 < 12))
 			return null;
 
 		if (e.getLocation().getBlock().isLiquid())
